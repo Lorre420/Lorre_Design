@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Datenschutz | Lorre Design</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Gleiche Styles wie im Hauptprojekt -->
+    <style>
+        /* Grundlegende Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Candara', sans-serif;
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 0;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #e91e63;
+            padding: 20px;
+            text-align: center;
+            position: relative; /* Wichtig für den Zurück-Button */
+        }
+        header h1 {
+            font-family: 'Didot LT Pro', serif;
+            font-size: 2.4em;
+            color: #fff;
+        }
+
+        /* Zurück-Button */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #d81b60;
+            color: #fff;
+        }
+
+        /* Hauptinhalt */
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            font-family: 'Didot LT Pro', serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #e91e63;
+        }
+
+        p,
+        li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #ddd;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #e91e63;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #d81b60;
+            text-decoration: underline;
+        }
+
+        /* Footer (identisch wie in index.html) */
+        footer {
+            background-color: #333;
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 3px solid #e91e63;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .copyright {
+            font-family: 'Didot LT Pro', serif;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .social-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.3s ease;
+        }
+        .social-item:hover {
+            transform: translateX(5px);
+        }
+        .social-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .social-text {
+            font-size: 1.2em;
+        }
+        .footer-links {
+            margin-top: 20px;
+        }
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-family: 'Candara', sans-serif;
+            transition: color 0.3s ease;
+            padding: 5px 15px;
+            border: 2px solid transparent;
+        }
+        .footer-link:hover {
+            color: #e91e63;
+            border-bottom: 2px solid #e91e63;
+        }
+        .footer-link-item {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-info {
+                margin-top: 30px;
+            }
+
+            .social-item {
+                justify-content: center;
+            }
+
+            /* Button-Anpassung für kleinere Bildschirme */
+            .back-button {
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Datenschutzerklärung</h1>
+        <!-- Zurück-Button -->
+        <a href="index.html" class="back-button">Zurück</a>
+    </header>
+
+    <main>
+        <h2>1. Datenschutz auf einen Blick</h2>
+        <p>
+            Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten
+            passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich
+            identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer
+            nachfolgenden Datenschutzerklärung.
+        </p>
+
+        <h2>2. Datenerfassung auf dieser Website</h2>
+        <p>
+            <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>
+            Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie
+            dem <a href="impressum.html">Impressum</a> dieser Website entnehmen.
+        </p>
+        <p>
+            <strong>Wie erfassen wir Ihre Daten?</strong><br>
+            Auf dieser Website werden keine personenbezogenen Daten automatisch erfasst.
+            Personenbezogene Daten werden nur dann erhoben, wenn Sie uns diese freiwillig mitteilen,
+            beispielsweise indem Sie uns eine E-Mail senden oder telefonisch kontaktieren.
+            In diesem Fall verwenden wir die übermittelten Daten ausschließlich zur Bearbeitung Ihrer Anfrage.<br><br>
+        </p>
+
+        <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
+        <p>
+            <strong>Datenschutz</strong><br>
+            Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten
+            vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+        </p>
+        <p>
+        </p>
+        <p>
+            Wir weisen darauf hin, dass die Datenübertragung im Internet (z.&nbsp;B. bei der Kommunikation per E-Mail)
+            Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht
+            möglich.
+        </p>
+
+        <h2>4. Ihre Rechte als betroffene Person</h2>
+        <p>
+            Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht, unentgeltlich Auskunft über
+            Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der
+            Datenverarbeitung zu erhalten und ggf. ein Recht auf Berichtigung, Einschränkung oder Löschung dieser Daten.
+        </p>
+        <p>
+            Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit unter der im <a
+                href="impressum.html">Impressum</a> angegebenen Adresse an uns wenden. Des Weiteren steht Ihnen ein
+            Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
+        </p>
+
+        <h2>5. Server-Log-Dateien</h2>
+        <p>
+            Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien,
+            die Ihr Browser automatisch an uns übermittelt. Dies sind beispielsweise:
+        </p>
+        <ul>
+            <li>Browsertyp und Browserversion</li>
+            <li>Verwendetes Betriebssystem</li>
+            <li>Referrer URL</li>
+            <li>Hostname des zugreifenden Rechners</li>
+            <li>Uhrzeit der Serveranfrage</li>
+        </ul>
+        <p>
+            Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser
+            Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes
+            Interesse an der technisch fehlerfreien Darstellung und Optimierung seiner Website.
+        </p>
+
+        <h2>6. Kontaktaufnahme</h2>
+        <p>
+            Wenn Sie uns per E-Mail, Telefon oder auf anderem Wege kontaktieren, wird Ihre Anfrage inklusive aller
+            daraus hervorgehenden personenbezogenen Daten (z. B. Name, Anfrage) zum Zwecke der Bearbeitung Ihres
+            Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+        </p>
+        <p>
+            Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit
+            der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich
+            ist. In allen übrigen Fällen beruht die Verarbeitung auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)
+            und/oder auf unseren berechtigten Interessen (Art. 6 Abs. 1 lit. f DSGVO).
+        </p>
+
+        <h2>7. Plugins und Tools von Drittanbietern</h2>
+        <p>
+            Sofern auf dieser Website Inhalte von Drittanbietern (z. B. Instagram-Feed, eingebettete Videos, Karten
+            etc.) verwendet werden, kann es sein, dass diese Drittanbieter Cookies setzen oder Daten erfassen. Bitte
+            informieren Sie sich auch in den Datenschutzerklärungen der jeweiligen Anbieter.
+        </p>
+        <p>
+            Wir übernehmen keine Haftung für die Inhalte oder Datenschutzpraktiken externer Anbieter. Bei konkreten
+            Anhaltspunkten einer Rechtsverletzung werden wir entsprechende Inhalte entfernen oder den Zugriff darauf
+            unterbinden.
+        </p>
+
+        <p style="margin-top: 40px; font-size: 0.9em; color: #999;">
+        </p>
+    </main>
+
+    <!-- Footer identisch zur index.html -->
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">
+                &copy; 2025 Lorena Romano – Alle Rechte vorbehalten.
+            </p>
+            <div class="social-info">
+                <div class="social-item">
+                    <img src="images/instagram-icon.png" alt="Instagram" class="social-icon">
+                    <span class="social-text">
+                        <a href="https://www.instagram.com/lorre_design" target="_blank">@lorre_design</a>
+                    </span>
+                </div>
+                <div class="social-item">
+                    <img src="images/email-icon.png" alt="Email" class="social-icon">
+                    <span class="social-text">lorre_design@web.de</span>
+                </div>
+                <div class="social-item">
+                    <img src="images/phone-icon.png" alt="Telefon" class="social-icon">
+                    <span class="social-text">+49 173 7528198</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <p class="footer-link-item">
+                    <a href="impressum.html" class="footer-link">Impressum</a>
+                </p>
+                <p class="footer-link-item">
+                    <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
