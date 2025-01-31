@@ -1,28 +1,193 @@
 <!DOCTYPE html>
 <html lang="de">
-
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Lorre Design</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <style>
+        /* Grundlegendes Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Verhindert horizontales Scrollen auf schmalen Screens */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Candara', sans-serif;
             background-color: #2a2a2a;
             color: #fff;
-            padding: 0;
-            margin: 0;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
         }
 
+        /* -------------------------------------------
+           Responsive Typografie mit clamp()
+        ------------------------------------------- */
+        /* Überschriften allgemein (falls du standard-h1/h2/h3 nutzt) */
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.2;
+            margin: 1em 0;
+            color: #fff;
+            text-align: center;
+        }
+        h2 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            line-height: 1.3;
+            margin: 0.8em 0;
+            color: #fff;
+            text-align: center;
+        }
+        h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            line-height: 1.3;
+            margin: 0.6em 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Grundschrift für p und li */
+        p, li {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            line-height: 1.6;
+            color: #ddd;
+        }
+
+        /* -------------------------------------------
+           Individuelle Klassen mit clamp()
+        ------------------------------------------- */
+
+        /* Willkommens-Überschrift (war .welcome-text) */
+        .welcome-text {
+            font-family: 'Didot LT Pro', serif;
+            font-size: clamp(2.2rem, 6vw, 3.5rem); /* größer als normal */
+            font-weight: normal;
+            margin: 60px 0 120px 0;
+            line-height: 1.2;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Brand-Text (war 35px) */
+        .brand-text {
+            font-family: 'Didot LT Pro', serif;
+            font-size: clamp(1.8rem, 5vw, 2.2rem);
+            color: #e91e63; /* bleibt pink */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Intro-Statement (war 40px) */
+        .intro-statement {
+            font-family: 'Didot LT Pro', serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin: 40px 0;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* Intro-Description (war 1.3em) */
+        .intro-description {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Services-List Titel (war 1.8em) */
+        .services-list h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #e91e63;
+            font-family: 'Didot LT Pro', serif;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Portfolio-Heading (war 40px) */
+        .portfolio-heading {
+            font-family: 'Didot LT Pro', serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: 300;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Portfolio-Info h3 (war 1.8em) */
+        .portfolio-info h3 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 15px;
+        }
+        /* Portfolio-Info p (war 1.1em) */
+        .portfolio-info p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            margin: 5px 0;
+        }
+
+        /* About-Heading (war 40px) */
+        .about-heading {
+            font-family: 'Didot LT Pro', serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: normal;
+            margin-bottom: 60px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* About-Intro (war 24px) */
+        .about-intro {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #e91e63;
+        }
+
+        /* About-Text (war 1.2em) */
+        .about-text {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        /* Kontakt-Heading (war 40px) */
+        .contact-heading {
+            font-family: 'Didot LT Pro', serif;
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            font-weight: normal;
+            margin-top: -30px;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* Kontakt-Intro (war 24px) */
+        .contact-intro {
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-weight: bold;
+            color: #e91e63;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Kontakt-Text (war 1.2em) */
+        .contact-text {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #ddd;
+            text-align: center;
+        }
+
+        /* -------------------------------------------
+           Header, Logo, Navigation 
+        ------------------------------------------- */
         header {
             background-color: #e91e63;
             padding: 20px;
@@ -45,7 +210,7 @@
         }
 
         header h1 {
-            font-size: 2.6em;
+            font-size: 2.6em; /* Kannst du auch auf clamp anpassen, wenn gewünscht */
             color: white;
             font-family: 'Didot LT Pro', serif;
         }
@@ -186,25 +351,14 @@
             }
         }
 
+        /* -------------------------------------------
+           Intro Section
+        ------------------------------------------- */
         #intro {
             text-align: center;
             margin: 40px auto;
             padding: 20px;
             max-width: 1200px;
-        }
-
-        .welcome-text {
-            font-family: 'Didot LT Pro', serif;
-            font-size: 60px;
-            font-weight: normal;
-            margin: 60px 0 120px 0;
-        }
-
-        .brand-text {
-            font-family: 'Didot LT Pro', serif;
-            font-size: 35px;
-            color: #e91e63;
-            margin-bottom: 20px;
         }
 
         .arrow-down {
@@ -216,34 +370,15 @@
         }
 
         @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
+            0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
             }
-
             40% {
                 transform: translateY(-30px);
             }
-
             60% {
                 transform: translateY(-15px);
             }
-        }
-
-        .intro-statement {
-            font-family: 'Didot LT Pro', serif;
-            font-size: 40px;
-            margin: 40px 0;
-            line-height: 1.4;
-        }
-
-        .intro-description {
-            font-size: 1.3em;
-            margin-bottom: 10px;
         }
 
         .services-list {
@@ -256,20 +391,11 @@
             border-left: 4px solid #e91e63;
         }
 
-        .services-list h3 {
-            color: #e91e63;
-            font-family: 'Didot LT Pro', serif;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
         .services-list ul {
             list-style-type: none;
         }
 
         .services-list li {
-            font-size: 1.2em;
             margin: 15px 0;
             padding-left: 25px;
             position: relative;
@@ -282,17 +408,13 @@
             left: 0;
         }
 
+        /* -------------------------------------------
+           Portfolio Section
+        ------------------------------------------- */
         #portfolio {
             text-align: center;
             margin: 80px 0;
             padding: 0 20px;
-        }
-
-        .portfolio-heading {
-            font-family: 'Didot LT Pro', serif;
-            font-size: 40px;
-            font-weight: 300;
-            margin-bottom: 40px;
         }
 
         .gallery {
@@ -307,26 +429,21 @@
 
         .portfolio-item {
             position: relative;
-            height: 400px;
-            /* Feste Höhe */
+            height: 400px; 
             flex-grow: 0;
-            /* Verhindert das Wachsen */
             flex-shrink: 0;
-            /* Verhindert das Schrumpfen */
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
         }
 
         .portfolio-item:hover {
-            opacity: 1;
             /*transform: translateY(-5px);*/
         }
 
         .portfolio-item img {
             height: 100%;
-            width: auto;
-            /* Lässt die Breite sich automatisch anpassen */
+            width: auto; 
             display: block;
             border-radius: 12px;
         }
@@ -349,25 +466,8 @@
             border-radius: 12px;
         }
 
-        .portfolio-info h3 {
-            font-family: 'Didot LT Pro', serif;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .portfolio-info p {
-            font-size: 1.1em;
-            margin: 5px 0;
-            text-align: center;
-        }
-
         .portfolio-item:hover .portfolio-info {
             opacity: 1;
-        }
-
-        .portfolio-item:hover img {
-            transform: none;
         }
 
         .more-projects-btn {
@@ -391,21 +491,23 @@
             box-shadow: 0 6px 12px rgba(233, 30, 99, 0.4);
         }
 
-        /* About Me Section */
-        /* About Me Section */
+        @media (max-width: 768px) {
+            .portfolio-item {
+                height: 300px; /* Kleine Höhe auf Mobilgeräten */
+            }
+            .gallery {
+                gap: 20px;
+            }
+        }
+
+        /* -------------------------------------------
+           About Me Section
+        ------------------------------------------- */
         #about {
             text-align: center;
             max-width: 1000px;
             margin: 80px auto;
             padding: 40px 20px;
-        }
-
-        .about-heading {
-            font-family: 'Didot LT Pro', serif;
-            font-size: 40px;
-            font-weight: normal;
-            margin-bottom: 60px;
-            color: #ffffff;
         }
 
         .about-content {
@@ -435,6 +537,7 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            cursor: pointer;
         }
 
         .about-text-container {
@@ -442,52 +545,23 @@
             max-width: 600px;
         }
 
-        .about-intro {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            color: #e91e63;
-        }
-
-        .about-text {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            line-height: 1.8;
-            color: #ddd;
-        }
-
-        /* Media Queries für responsive Design */
         @media screen and (max-width: 768px) {
             .about-content {
                 flex-direction: column;
                 align-items: center;
                 gap: 30px;
             }
-
             .profile-image-container {
                 width: 250px;
                 height: 250px;
                 margin: 0 auto;
             }
-
             .about-text-container {
                 text-align: center;
                 padding: 0 15px;
             }
-
             .about-heading {
-                font-size: 32px;
                 margin-bottom: 40px;
-            }
-
-            .about-intro {
-                font-size: 20px;
-                margin-bottom: 20px;
-            }
-
-            .about-text {
-                font-size: 1.1em;
-                line-height: 1.6;
             }
         }
 
@@ -495,10 +569,6 @@
             .profile-image-container {
                 width: 200px;
                 height: 200px;
-            }
-
-            .about-heading {
-                font-size: 28px;
             }
         }
 
@@ -537,25 +607,14 @@
             color: #e91e63;
         }
 
+        /* -------------------------------------------
+           Kontakt Section
+        ------------------------------------------- */
         #kontakt {
             text-align: center;
             max-width: 1000px;
-            /* Breiterer Container für bessere Balance */
             margin: 80px auto;
             padding: 40px 20px;
-        }
-
-        .contact-heading {
-            font-family: 'Didot LT Pro', serif;
-            font-size: 40px;
-            /* Größere Schrift für mehr Präsenz */
-            font-weight: normal;
-            margin-top: -30px;
-            /* Weniger Abstand nach oben */
-            margin-bottom: 40px;
-            /* Abstand nach unten anpassen */
-            color: #ffffff;
-            /* Akzentfarbe für den Titel */
         }
 
         .contact-content {
@@ -563,37 +622,17 @@
             flex-direction: column;
             align-items: center;
             gap: 40px;
-            /* Abstand zwischen den Elementen */
-        }
-
-        .contact-intro {
-            font-size: 24px;
-            /* Größere Schrift für die Einleitung */
-            font-weight: bold;
-            color: #e91e63;
-            /* Akzentfarbe */
-            margin-bottom: 20px;
         }
 
         .contact-details {
             text-align: center;
             max-width: 600px;
-            /* Begrenzte Breite für bessere Lesbarkeit */
-        }
-
-        .contact-text {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            line-height: 1.8;
-            color: #ddd;
-            /* Hellerer Text für besseren Kontrast */
         }
 
         .contact-links {
             display: flex;
             flex-direction: column;
             gap: 20px;
-            /* Abstand zwischen den Kontakt-Elementen */
             margin-bottom: 30px;
         }
 
@@ -602,13 +641,11 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
-            /* Abstand zwischen Icon und Text */
             transition: transform 0.3s ease;
         }
 
         .contact-item:hover {
             transform: translateX(10px);
-            /* Leichter Hover-Effekt */
         }
 
         .contact-icon {
@@ -618,7 +655,6 @@
 
         .contact-links a {
             color: #e91e63;
-            /* Akzentfarbe für Links */
             text-decoration: none;
             font-size: 1.2em;
             transition: color 0.3s ease;
@@ -626,10 +662,12 @@
 
         .contact-links a:hover {
             color: #d81b60;
-            /* Dunklere Akzentfarbe beim Hover */
             text-decoration: underline;
         }
 
+        /* -------------------------------------------
+           Footer
+        ------------------------------------------- */
         footer {
             background-color: #333;
             padding: 40px 20px;
@@ -703,32 +741,6 @@
             display: inline-block;
             margin: 0 10px;
         }
-
-        @media screen and (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .social-info {
-                margin-top: 30px;
-            }
-
-            .social-item {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-item {
-                height: 300px;
-                /* Kleinere Höhe auf Mobilgeräten */
-            }
-
-            .gallery {
-                gap: 20px;
-            }
-        }
     </style>
 </head>
 
@@ -759,13 +771,21 @@
         <p class="brand-text">-</p>
         <p class="brand-text">FÜR LOOKS DIE BLEIBEN, UND LOGOS DIE GLÄNZEN</p>
         <img src="images/arrow.png" alt="Pfeil" class="arrow-down">
-        <p class="intro-statement" id="intro-statement">PRÄZISION UND ÄSTHETIK STEHEN<br>BEI MEINER ARBEIT AN ERSTER
-            STELLE</p>
-        <p class="intro-description">Mein Fokus liegt auf der Gestaltung professioneller Designs wie Logos, Printmedien
-            und Webdesign.</p>
-        <p class="intro-description">Zusätzlich habe ich mich auf die Entwicklung individueller Tattoo-Motive
-            spezialisiert,<br>die mit Kreativität und Liebe zum Detail entstehen.</p>
-        <p class="intro-description">Es ist nicht das dabei was du suchst?<br>Dann schreib mir gerne eine E-Mail.</p>
+
+        <p class="intro-statement" id="intro-statement">
+            PRÄZISION UND ÄSTHETIK STEHEN<br>BEI MEINER ARBEIT AN ERSTER STELLE
+        </p>
+        <p class="intro-description">
+            Mein Fokus liegt auf der Gestaltung professioneller Designs wie Logos, Printmedien
+            und Webdesign.
+        </p>
+        <p class="intro-description">
+            Zusätzlich habe ich mich auf die Entwicklung individueller Tattoo-Motive
+            spezialisiert,<br>die mit Kreativität und Liebe zum Detail entstehen.
+        </p>
+        <p class="intro-description">
+            Es ist nicht das dabei was du suchst?<br>Dann schreib mir gerne eine E-Mail.
+        </p>
 
         <div class="services-list">
             <h3 style="font-family: 'Candara', sans-serif;">Meine Leistungen im Überblick</h3>
@@ -821,7 +841,7 @@
                 <img src="images/image5.jpg" alt="Projekt 5">
                 <div class="portfolio-info">
                     <h3>WEBSITE-DESIGN</h3>
-                    <p>AUSSCHNITT AUS DER DESIGNTEN </p>
+                    <p>AUSSCHNITT AUS DER DESIGNTEN</p>
                     <p>WEBSITE SPACE TRAVEL</p>
                 </div>
             </div>
@@ -1059,15 +1079,15 @@
         // Funktion zum Erstellen eines Projekt-Elements
         function createProjectElement(project) {
             return `
-        <div class="portfolio-item">
-            <img src="${project.image}" alt="${project.title}">
-            <div class="portfolio-info">
-                <h3>${project.title}</h3>
-                <p>${project.description1}</p>
-                <p>${project.description2}</p>
-            </div>
-        </div>
-    `;
+                <div class="portfolio-item">
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="portfolio-info">
+                        <h3>${project.title}</h3>
+                        <p>${project.description1}</p>
+                        <p>${project.description2}</p>
+                    </div>
+                </div>
+            `;
         }
 
         // Funktion zum Rendern der Galerie
@@ -1116,5 +1136,4 @@
         renderGallery(false);
     </script>
 </body>
-
 </html>
